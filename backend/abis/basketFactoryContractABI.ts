@@ -1,0 +1,142 @@
+export const basketFactoryContractABI = [
+  {
+    type: "function",
+    name: "allBasket",
+    inputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+    outputs: [{ name: "", type: "address", internalType: "address" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "allBasketOfBasket",
+    inputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+    outputs: [{ name: "", type: "address", internalType: "address" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "createBasket",
+    inputs: [
+      { name: "name", type: "string", internalType: "string" },
+      { name: "symbol", type: "string", internalType: "string" },
+      {
+        name: "tokens",
+        type: "tuple[]",
+        internalType: "struct IConstant.BasketInfo[]",
+        components: [
+          { name: "addr", type: "address", internalType: "address" },
+          { name: "percent", type: "uint8", internalType: "uint8" },
+          { name: "image", type: "string", internalType: "string" },
+        ],
+      },
+      { name: "isCreateBasketToken", type: "bool", internalType: "bool" },
+    ],
+    outputs: [],
+    stateMutability: "payable",
+  },
+  {
+    type: "function",
+    name: "getAllBaskets",
+    inputs: [],
+    outputs: [{ name: "", type: "address[]", internalType: "address[]" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getAllUserBasketOfBaskets",
+    inputs: [{ name: "account", type: "address", internalType: "address" }],
+    outputs: [{ name: "", type: "address[]", internalType: "address[]" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getAllUserBaskets",
+    inputs: [{ name: "account", type: "address", internalType: "address" }],
+    outputs: [{ name: "", type: "address[]", internalType: "address[]" }],
+    stateMutability: "view",
+  },
+  {
+    type: "event",
+    name: "CreateBasket",
+    inputs: [
+      {
+        name: "creator",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "basketAddress",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "name",
+        type: "string",
+        indexed: false,
+        internalType: "string",
+      },
+      {
+        name: "symbol",
+        type: "string",
+        indexed: false,
+        internalType: "string",
+      },
+      {
+        name: "tokens",
+        type: "tuple[]",
+        indexed: false,
+        internalType: "struct IConstant.BasketInfo[]",
+        components: [
+          { name: "addr", type: "address", internalType: "address" },
+          { name: "percent", type: "uint8", internalType: "uint8" },
+          { name: "image", type: "string", internalType: "string" },
+        ],
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "CreateBasketOfBasket",
+    inputs: [
+      {
+        name: "creator",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "basketOfBasketAddress",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "name",
+        type: "string",
+        indexed: false,
+        internalType: "string",
+      },
+      {
+        name: "symbol",
+        type: "string",
+        indexed: false,
+        internalType: "string",
+      },
+      {
+        name: "baskets",
+        type: "tuple[]",
+        indexed: false,
+        internalType: "struct IConstant.BasketInfo[]",
+        components: [
+          { name: "addr", type: "address", internalType: "address" },
+          { name: "percent", type: "uint8", internalType: "uint8" },
+          { name: "image", type: "string", internalType: "string" },
+        ],
+      },
+    ],
+    anonymous: false,
+  },
+];
